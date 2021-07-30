@@ -22,6 +22,6 @@ jobs:
       - name: running script
         shell: bash
         env:
-          GTOKEN: ${{ secrets.TOKEN }}
+          G_TOKEN: ${{ secrets.TOKEN }}
         run: python main.py
         

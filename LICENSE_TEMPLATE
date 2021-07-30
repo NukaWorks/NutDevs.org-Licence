@@ -1,4 +1,4 @@
-﻿Copyright (©) 2021 NutDevs.org Devs Team | #PROJECT_NAME#
+﻿Copyright (©) 2021 NutDevs.org Devs Team | {project_name}
 
 The commercial sale of the source code, binaries or resources (logos, sounds, and others ...), even partial of the "program" is forbidden.
 The use of the source code in a not lucrative or private use, is authorized, this project is open source, the contribution, the improvement of the source code is authorized.
@@ -22,4 +22,4 @@ RULES:
 
 If you respect these rules, there should be no further problems.
 
-License Version: #LICENSE_VER_NUMBER#
+License Version: {license_version}
