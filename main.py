@@ -35,7 +35,7 @@ def update_repo_licence(repo, licence):
 def update_licence_repos(repo):
     for repo in g_account.get_repos():
         licence = parse_licence("LICENSE") \
-            .replace("#PROJECT_NAME#", repo.name) \
+            .replace("#PROJECT_NAME#", repo.full_name) \
             .replace("#LICENSE_VER_NUMBER#", licence_version)
 
         update_repo_licence(repo, licence)
