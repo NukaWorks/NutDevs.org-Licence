@@ -1,4 +1,4 @@
-# Nutdev.org License Updater
+# Nutdevs.org opensource License Updater
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/NutDevs-org/NutDevs.org-Licence/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/NutDevs-org/NutDevs.org-Licence/?branch=main)
 ![GitHub repo size](https://img.shields.io/github/repo-size/NutDevs-org/NutDevs.org-Licence)
