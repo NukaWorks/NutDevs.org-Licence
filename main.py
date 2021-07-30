@@ -1,9 +1,9 @@
-import dotenv
+import os
+
 from github import Github
 
 licence_version = "1.0.0"
-config = dotenv.dotenv_values(".env")
-g_account = Github(config["GTOKEN"]).get_user("NutDevs-org")
+g_account = Github(os.environ["GTOKEN"]).get_user("NutDevs-org")
 
 
 def parse_licence(file: str):
