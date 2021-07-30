@@ -8,18 +8,39 @@
 
 A small python script to automatically update License files
 
-## Install
+## Install for manual utilisation
 
-Download the files from the repository
+1. Download the files from the repository
 ```bash
 git clone https://github.com/NutDevs-org/NutDevs.org-Licence
 ```
 
-Install the required python packages
+2. Install the required python packages
 ```bash
 python -m pip install requirements.txt
 ```
 
+
+3. Create a file named `.env` in project root as the `.env.example` template.
+
+
+4. Run the script
 ```bash
 python -m main.py
 ```
+
+## Install as github Action
+
+1. Copy the `github_action.yml.example` into `.github/workflows.main.yml`
+
+
+2. Go to your repository setting and add a value `TOKEN` with your account token in the `secrets` section.
+
+*The workflows should update every day but you can run it manually*
+
+
+## Get a github token
+
+Go in your account setting, developers settings, personal access token and create a new token
+
+***DO NOT SHARE IT WITH ANYONE !***

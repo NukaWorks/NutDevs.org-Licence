@@ -1,0 +1,26 @@
+on:
+  workflow_dispatch:
+  schedule: [ { cron: "0 0 * * *" } ]
+
+jobs:
+  license-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          python-version: '3.x'
+          architecture: 'x64'
+
+      - name: install requirements
+        run: pip install -r requirements.txt
+
+      - name: running script
+        shell: bash
+        env:
+          G_TOKEN: ${{ secrets.TOKEN }}
+        run: python main.py
