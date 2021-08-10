@@ -1,5 +1,4 @@
 """A small python script to automatically update License files."""
-import hashlib
 import os
 from typing import Optional
 
@@ -29,23 +28,21 @@ def update_repo_licence(repo, licence) -> None:
         g_licence: ContentFile = repo.get_contents("LICENSE")
 
     except UnknownObjectException:
-        if g_licence.sha == hashlib.sha1(parse_licence("LICENSE_TEMPLATE", repo.name).encode('UTF-8')):
-            repo.create_file(
-                "LICENSE",
-                "Adding LICENSE",
-                licence,
-                branch=repo.default_branch,
-            )
+        repo.create_file(
+            "LICENSE",
+            "Adding LICENSE",
+            licence,
+            branch=repo.default_branch,
+        )
 
     else:
-        if g_licence.sha == hashlib.sha1(parse_licence("LICENSE_TEMPLATE", repo.name).encode('UTF-8')):
-            repo.update_file(
-                "LICENSE",
-                "Updated LICENSE",
-                licence,
-                g_licence.sha,
-                branch=repo.default_branch,
-            )
+        repo.update_file(
+            "LICENSE",
+            "Updated LICENSE",
+            licence,
+            g_licence.sha,
+            branch=repo.default_branch,
+        )
 
 
 def update_licence_repos(account: AuthenticatedUser) -> None:
