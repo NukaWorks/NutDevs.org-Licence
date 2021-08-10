@@ -29,7 +29,7 @@ def update_repo_licence(repo, licence) -> None:
         g_licence: ContentFile = repo.get_contents("LICENSE")
 
     except UnknownObjectException:
-        if g_licence.sha == hashlib.sha256(parse_licence("LICENSE_TEMPLATE", repo.name).encode('UTF-8')):
+        if g_licence.sha == hashlib.sha1(parse_licence("LICENSE", repo.name).encode('UTF-8')):
             repo.create_file(
                 "LICENSE",
                 "Adding LICENSE",
@@ -38,7 +38,7 @@ def update_repo_licence(repo, licence) -> None:
             )
 
     else:
-        if g_licence.sha == hashlib.sha256(parse_licence("LICENSE_TEMPLATE", repo.name).encode('UTF-8')):
+        if g_licence.sha == hashlib.sha1(parse_licence("LICENSE", repo.name).encode('UTF-8')):
             repo.update_file(
                 "LICENSE",
                 "Updated LICENSE",
