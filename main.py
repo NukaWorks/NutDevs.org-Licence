@@ -1,9 +1,9 @@
 """A small python script to automatically update License files."""
+import hashlib
+import os
 from typing import Optional
 
 import dotenv
-import os
-
 from github import Github
 from github.AuthenticatedUser import AuthenticatedUser
 from github.ContentFile import ContentFile
@@ -25,39 +25,43 @@ def parse_licence(file: str, repo_name: str) -> str:
 
 def update_repo_licence(repo, licence) -> None:
     """Create/update license for a repository and commit the changes."""
+    global g_licence
     try:
         g_licence: ContentFile = repo.get_contents("LICENSE")
 
     except UnknownObjectException:
-        repo.create_file(
-            "LICENSE",
-            "Adding LICENSE",
-            licence,
-            branch=repo.default_branch,
-        )
+        if g_licence.sha == hashlib.sha1(parse_licence("LICENSE_TEMPLATE")):
+            repo.create_file(
+                "LICENSE",
+                "Adding LICENSE",
+                licence,
+                branch=repo.default_branch,
+            )
 
     else:
-        repo.update_file(
-            "LICENSE",
-            "Updated LICENSE",
-            licence,
-            g_licence.sha,
-            branch=repo.default_branch,
-        )
+        if g_licence.sha == hashlib.sha1(parse_licence("LICENSE_TEMPLATE")):
+            repo.update_file(
+                "LICENSE",
+                "Updated LICENSE",
+                licence,
+                g_licence.sha,
+                branch=repo.default_branch,
+            )
 
 
 def update_licence_repos(account: AuthenticatedUser) -> None:
     """Update every license of the user repositories."""
     for repo in account.get_repos():
-        licence_template = parse_licence("LICENSE_TEMPLATE", repo.name)
-        update_repo_licence(repo, licence_template)
+        if not repo.archived:
+            licence_template = parse_licence("LICENSE_TEMPLATE", repo.name)
+            update_repo_licence(repo, licence_template)
 
 
 def main() -> None:
     """Main entry point of the license updater."""
     token: Optional[str] = (
-        os.environ.get("G_TOKEN")
-        or dotenv.dotenv_values('.env').get('G_TOKEN')
+            os.environ.get("G_TOKEN")
+            or dotenv.dotenv_values('.env').get('G_TOKEN')
     )
 
     if token is None:
