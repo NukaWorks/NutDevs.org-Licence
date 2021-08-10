@@ -25,7 +25,6 @@ def parse_licence(file: str, repo_name: str) -> str:
 
 def update_repo_licence(repo, licence) -> None:
     """Create/update license for a repository and commit the changes."""
-    global g_licence
     try:
         g_licence: ContentFile = repo.get_contents("LICENSE")
 
