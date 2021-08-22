@@ -18,7 +18,7 @@ def parse_licence(file: str, repo_name: str) -> str:
 
     return content.format(
         project_name=repo_name,
-        license_version="1.0.0"
+        license_version="1.0.1"
     )
 
 
