@@ -26,7 +26,6 @@ def update_repo_licence(repo, licence) -> None:
     """Create/update license for a repository and commit the changes."""
     try:
         g_licence: ContentFile = repo.get_contents("LICENSE")
-        print(g_licence.sha)
 
     except UnknownObjectException:
         repo.create_file(
