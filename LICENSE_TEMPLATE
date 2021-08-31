@@ -1,24 +1,23 @@
+MIT License
+
 ﻿Copyright (©) 2021 NutDevs.org Devs Team | {project_name}
 
-The commercial sale of the source code, binaries or resources (logos, sounds, and others ...), even partial of the "program" is forbidden.
-The use of the source code in a not lucrative or private use, is authorized, this project is open source, the contribution, the improvement of the source code is authorized.
-The use of the "program" or "source code", in a company of any form 
-is allowed without reselling the "program" or part of the "source code", resources such as 
-Images, Sounds, Logos, is allowed
-To protect your rights, we must prevent others from denying you these rights or asking you to 
-or ask you to waive them. Therefore, you have certain responsibilities if you distribute copies of the 
-copies of the software, or if you modify it: responsibilities to respect the freedom of others.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-TERMS AND CONDITIONS: 
-	The "Program":
-		The "Program" means the entire project, the source code and the compiled binaries that make the "Program" work.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-RULES:
-	- Respect the ethical rules of copyright.
-	- ALWAYS provide the "program" with the LICENSE provided in the root directory of the 
-	  "program".
-	- DO NOT modify the License.
-
-If you respect these rules, there should be no further problems.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 License Version: {license_version}
